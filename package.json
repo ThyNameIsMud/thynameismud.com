@@ -9,6 +9,7 @@
   "author": "Louis Weber <thynameismud@gmail.com>",
   "license": "ISC",
   "dependencies": {
+    "catbox-redis": "^1.0.4",
     "hapi": "^8.2.0",
     "jade": "^1.9.2",
     "joi": "^5.1.0",

@@ -1,5 +1,5 @@
 module.exports = {
-    hostname: 'localhost',
+    hostname: '127.0.0.1',
     port: 3000,
     urls: {
         failureRedirect: '/login',
@@ -17,7 +17,7 @@ module.exports = {
     cache: {
         engine: require('catbox-redis'),
         options: {
-            host: "localhost",
+            host: "127.0.0.1",
             partition: "tnim"
         }
     },
