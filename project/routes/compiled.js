@@ -3,9 +3,7 @@
 module.exports = {
 	method: 'GET',
 	path: '/compiled/{param*}',
-	handler: {
-		directory: {
-			path: 'static/'
-		}
+	handler: function (request, reply) {
+		reply.file(__dirname + "/../static/" + request.params.param);
 	}
 };
