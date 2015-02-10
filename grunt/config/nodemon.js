@@ -9,8 +9,8 @@
 module.exports = function (config) {
     return {
         dev: {
+            script: 'app.js',
             options: {
-                file: 'app.js',
                 args: [],
                 nodeArgs: [],
                 ignoredFiles: ['node_modules/**'],
@@ -19,9 +19,9 @@ module.exports = function (config) {
                 delayTime: 1,
                 legacyWatch: true,
                 env: {
-                    PORT: '8000'
+                    PORT: '3000'
                 },
-                cwd: __dirname + '../../project'
+                cwd: __dirname + '/../../project'
             }
         }
     };

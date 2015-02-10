@@ -4,9 +4,6 @@ $legacy-support-for-ie6: false !default;
 $legacy-support-for-ie7: false !default;
 
 @import
-	"../lib/caboose/caboose",
-	"../lib/caboose/src/caboose/reset",
-	"../lib/foundation/scss/foundation.scss",
 	"mixins/mixins",
 
 	"placeholders/placeholders",

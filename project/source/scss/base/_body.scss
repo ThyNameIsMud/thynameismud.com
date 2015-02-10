@@ -1,6 +1,6 @@
 html {
 	background: #fff;
-	@extend %typeface;
+	@extend %typeface !optional;
 }
 
 a {

@@ -2,9 +2,9 @@
 'use strict';
 
 var CONFIG = {
-	source : 'project/source/',
-	static : 'project/static/',
-	templates : 'project/templates/',
+	source : __dirname + '/project/source/',
+	static : __dirname + '/project/static/',
+	templates : __dirname + '/project/templates/',
 	livereloadPort : 34567
 };
 
