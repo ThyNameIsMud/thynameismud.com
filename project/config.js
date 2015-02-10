@@ -1,6 +1,7 @@
 module.exports = {
     hostname: '127.0.0.1',
     port: 3000,
+    debug: { log: ['error'] },
     urls: {
         failureRedirect: '/login',
         successRedirect: '/'
@@ -10,9 +11,7 @@ module.exports = {
             jade: require('jade'),
         },
         path: __dirname + '/templates',
-        compileOptions: {
-            pretty: true
-        }
+        compileMode: 'sync'
     },
     cache: {
         engine: require('catbox-redis'),

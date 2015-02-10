@@ -9,11 +9,14 @@ var Hapi = require('hapi'),
   \____\___/|_| |_|_| |_|\__, |
                          |___/ 
 */
-var server = new Hapi.Server(config.hostname, config.port, {
-	views: config.views,
-	cache: config.cache
+
+var server = new Hapi.Server({
+	cache: config.cache,
+  debug: config.debug
 });
 
+server.views(config.views);
+server.connection({port: config.port, labels: 'app'});
 
 /*
   ____  _             _           

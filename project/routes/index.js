@@ -1,9 +1,9 @@
 module.exports = {
 	method: 'GET',
 	path: '/',
-	handler: function (request) {
+	handler: function (request, reply) {
 		/* do things with request; */
-		request.reply.view('index', {
+		reply.view('index', {
 	        title: 'ThyNameIsMud'
 	    });
 	}
