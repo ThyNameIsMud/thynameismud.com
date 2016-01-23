@@ -2,6 +2,7 @@
 'use strict';
 
 var CONFIG = {
+	lib : __dirname + '/bower_components/',
 	source : __dirname + '/project/source/',
 	static : __dirname + '/project/static/',
 	templates : __dirname + '/project/templates/',
@@ -24,8 +25,7 @@ module.exports = function (grunt) {
 		notify         : require('./grunt/config/notify')(CONFIG),
 		neuter         : require('./grunt/config/neuter')(CONFIG),
 		uglify         : require('./grunt/config/uglify')(CONFIG),
-		concurrent     : require('./grunt/config/concurrent')(CONFIG),
-		emberTemplates : require('./grunt/config/ember-templates')(CONFIG)
+		concurrent     : require('./grunt/config/concurrent')(CONFIG)
 	});
 
 	grunt.registerTask('server', function (port) {

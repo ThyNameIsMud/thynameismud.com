@@ -13,7 +13,6 @@ module.exports = function () {
 		develop : [
 			'neuter:libsDevelop',
 			'neuter:app',
-			'emberTemplates',
 			'compass:build',
 			'watch',
 			'nodemon'
@@ -21,7 +20,6 @@ module.exports = function () {
 		build : [
 			'neuter:libsBuild',
 			'neuter:app',
-			'emberTemplates',
 			'compass:build',
 			'jshint',
 		]

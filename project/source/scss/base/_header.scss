@@ -1,14 +1,9 @@
-header {
-	padding: 20px;
-	background: #eee;
-
-	h1 {
-		float: left;
-		margin-right: 20px;
-		font-size: 30px;
-	}
-}
-
 nav {
-	line-height: 30px;
+	line-height: .8em;
+	margin: 0 auto;
+	padding: 1em;
+	.logo {
+		display: block;
+
+	}
 }
