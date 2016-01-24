@@ -13,7 +13,8 @@
     "hapi": "^8.2.0",
     "jade": "^1.9.2",
     "joi": "^5.1.0",
-    "lout": "^6.1.0"
+    "lout": "^6.1.0",
+    "uglify-js": "^2.6.1"
   },
   "devDependencies": {
     "ember-template-compiler": "^1.9.0-alpha",
