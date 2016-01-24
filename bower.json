@@ -20,5 +20,8 @@
     "modernizr": "~2.8.3",
     "foundation": "~5.5.1",
     "caboose": "~2.7.0"
+  },
+  "resolutions": {
+    "ember": "~1.11"
   }
 }
