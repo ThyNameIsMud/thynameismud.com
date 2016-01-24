@@ -50,6 +50,8 @@
         "Ember": true,
         "Em": true,
         "Handlebars": true,
-        "require": true
+        "require": true,
+        "exports": true,
+        "console": true
     }
 }
