@@ -32,7 +32,8 @@ module.exports = function (grunt) {
 		grunt.task.run([
 			'clean:build',
 			'copy:build',
-			'concurrent:develop'
+			'concurrent:develop',
+			'notify:server'
 		]);
 	});
 

@@ -7,6 +7,11 @@
 
 module.exports = function () {
 	return {
+		server: {
+			options: {
+				message: 'Server Started'
+			}
+		},
 		build: {
 			options: {
 				message: 'Build complete.'
