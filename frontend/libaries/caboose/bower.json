@@ -1,0 +1,13 @@
+{
+	"name": "caboose",
+	"description": "RED Interactive's Sass + Compass Framework.",
+	"version": "2.7.0",
+	"ignore": [
+		"test",
+		".travis.yml",
+		".gitignore",
+		".editorconfig",
+		"config.rb",
+		"package.json"
+	]
+}

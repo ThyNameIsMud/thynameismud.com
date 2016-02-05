@@ -31,7 +31,7 @@ nbproject
 .svn
 .CVS
 .build
-project/static/*
+frontend/static/*
 
 # Unit test / coverage reports
 .coverage
@@ -41,7 +41,7 @@ project/static/*
 node_modules
 
 # Bower
-project/source/lib
+frontend/compiled/lib
 bower_components
 
 # Sas
@@ -49,3 +49,6 @@ bower_components
 
 #nodemon
 .nodemonignore
+
+#config
+config.json
