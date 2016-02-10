@@ -31,7 +31,7 @@ nbproject
 .svn
 .CVS
 .build
-frontend/static/*
+frontend/compiled/*
 
 # Unit test / coverage reports
 .coverage
@@ -41,7 +41,7 @@ frontend/static/*
 node_modules
 
 # Bower
-frontend/compiled/lib
+frontend/libaries/*
 bower_components
 
 # Sas
