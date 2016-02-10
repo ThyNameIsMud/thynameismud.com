@@ -1,10 +1,9 @@
 /*jshint node:true*/
-// compile and make js awesome
+// compile and make css awesome
 
-var 
+var gulp = require('gulp'),
 
 CONFIG = require('../../../../config'),
-gulp = require('gulp'),
 
 //gulp
 	flatten        = require('gulp-flatten'),

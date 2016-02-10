@@ -1,0 +1,27 @@
+{
+	"path": {
+		"base": "/Users/lweber/Sites/thynameismud.com",
+		"builder": "backend/builder", 
+		"libaries" : "frontend/libaries",
+		"source" : "frontend/source",
+		"compiled" : "frontend/compiled",
+		"templates" : "frontend/templates",
+		"styles" : "frontend/styles",
+		"server" : "backend/server",
+		"ui" : "frontend/ui-framework"
+	},
+	"paths": {},
+	"server": {
+		"domain" : "thynameismud.com",
+		"host" : "localhost",
+		"port" : 3000
+	},
+	"cache" : {
+		"host" : "localhost",
+		"port" : 3001
+	},
+	"db" : {
+		"host" : "localhost",
+		"port" : 3002
+	}
+}

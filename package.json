@@ -2,7 +2,7 @@
   "name": "ThyNameIsMud.com",
   "version": "1.0.0",
   "description": "The site for Louis Weber",
-  "main": "index.js",
+  "main": "backend/builder/guilpfile.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -20,14 +20,14 @@
   },
   "devDependencies": {
     "ember-template-compiler": "^1.9.0-alpha",
-    "grunt-bower-task": "^0.4.0",
-    "grunt-concurrent": "^1.0.0",
-    "grunt-neuter": "^0.6.0",
-    "grunt-notify": "^0.4.1",
     "gulp": "^3.9.0",
+    "gulp-flatten": "^0.2.0",
     "gulp-help": "^1.6.1",
+    "gulp-plumber": "^1.0.1",
+    "gulp-uglify": "^1.5.1",
     "handlebars": "^2.0.0",
     "load-grunt-tasks": "^3.1.0",
+    "main-bower-files": "^2.11.1",
     "run-sequence": "^1.1.5",
     "time-grunt": "^1.0.0"
   }
