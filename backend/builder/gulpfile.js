@@ -10,15 +10,15 @@ paths = {},
 tasks = {};
 // tasks
 gulp.task('default', false, [
-	'server'
+	'watch'
 ]);
 
 // main tasks
 tasks.build = require(CONFIG.paths.builder + '/tasks/build');
 gulp.task('build', 'Build the files', tasks.build);
 
-tasks.server = require(CONFIG.paths.builder + '/tasks/server');
-gulp.task('server', 'Start the server', tasks.server);
+tasks.watch = require(CONFIG.paths.builder + '/tasks/watch');
+gulp.task('watch', 'Start the server', tasks.watch);
 
 tasks.javascripts = require(CONFIG.paths.builder + '/tasks/build/javascript');
 gulp.task('build-javascript', 'Compile any additional javascripts', tasks.javascripts);

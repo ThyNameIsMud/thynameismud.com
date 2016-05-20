@@ -16,13 +16,8 @@ task = [];
 module.exports = function (callback) {
 	console.info('Building '+ CONFIG.server.domain);
 
-	tasks.ui = {
-		'watch' : require(CONFIG.paths.ui + '/tasks/watch'),
-		'build' : require(CONFIG.paths.ui + '/tasks/build')
-	};
-
-	gulp.task('watch-ui', 'Watch UI for Semantic UI', tasks.ui.watch);
-	gulp.task('build-ui', 'Build UI for Semantic UI', tasks.ui.build);
+	tasks.uibuilder = require(CONFIG.paths.ui + '/tasks/build');
+	gulp.task('build-ui', 'Build UI for Semantic UI', tasks.uibuilder);
 
 	tasks.javascripts = require(CONFIG.paths.builder + '/tasks/build/javascript');
 	gulp.task('build-javascript', 'Compile any additional javascripts', tasks.javascripts);
@@ -31,8 +26,6 @@ module.exports = function (callback) {
 	gulp.task('build-styles', 'Compile any additional styles', tasks.styles);
 	
 	task.push('build-ui');
-	task.push('watch-ui');
-
 	task.push('build-javascript');
 	task.push('build-styles');
 

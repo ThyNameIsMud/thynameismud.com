@@ -13,10 +13,10 @@ runSequence = require('run-sequence'),
 tasks = [];
 
 module.exports = function (callback) {
-	gulp.start('build');
-
-	//tasks.push('watch-ui');
-
-	//runSequence(tasks, callback);
+	
+	tasks.push('watch-ui');
+	tasks.push('watch-frontend');
+	
+	runSequence(tasks, callback);
 };
  
