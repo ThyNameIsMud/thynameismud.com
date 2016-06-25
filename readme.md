@@ -1,10 +1,21 @@
+#ThyNameIsMud.com
 
-Required
-NodeJS, NPM, PM2 (installed global)
 
-`npm install`
-`base_path=~/Site/ gulp`
+###Required
+NodeJS 
+NPM
+PM2
 
+###Install and Activate
+```bash
+npm install
+```
+```bash
+base_path=~/Site/ gulp
+```
+
+###File Structure
+```
 Framework
 	| Backend
 		| Builder
@@ -18,3 +29,4 @@ Framework
 		| Templates - TODO -
 		| Static - Populated by Bower/Symantic - empty
 		| UI-Framework - Symatntic 
+```
