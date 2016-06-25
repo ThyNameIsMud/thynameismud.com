@@ -9,7 +9,7 @@ CONFIG = require(process.env.base_path + 'config')
 module.exports = function (CONFIG) {
     var server = {
         hostname: 'localhost',
-        port: 6669,
+        port: 6660,
         debug: { log: ['error'] },
         urls: {
             failureRedirect: '/login',
