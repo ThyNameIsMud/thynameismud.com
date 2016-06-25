@@ -8,12 +8,12 @@ var CONFIG = require(process.env.base_path + 'config'),
 gulp  = require('gulp-help')(require('gulp')),
 paths = {},
 tasks = {};
-// tasks
+
+// main tasks
 gulp.task('default', false, [
 	'connect', 'watch'
 ]);
 
-// main tasks
 tasks.connect = require(CONFIG.paths.builder + 'tasks/connect');
 gulp.task('connect', 'Connect Frontend and Backend APIs', tasks.connect);
 
@@ -29,8 +29,8 @@ gulp.task('watch', 'Start the server', tasks.watch);
 tasks.frontend = require(CONFIG.paths.builder + 'tasks/connect/frontend');
 gulp.task('connect-frontend', 'Connect Frontend Server', tasks.frontend);
 
-tasks.backend = require(CONFIG.paths.builder + 'tasks/connect/backend');
-gulp.task('connect-backend', 'Connect Backend APIs', tasks.backend);
+//tasks.backend = require(CONFIG.paths.builder + 'tasks/connect/backend');
+//gulp.task('connect-backend', 'Connect Backend APIs', tasks.backend);
 
 //watchers
 tasks.output = require(CONFIG.paths.builder + 'tasks/watch/output');
@@ -48,3 +48,4 @@ tasks.ui = {
 
 gulp.task('watch-ui', 'Watch UI for Semantic UI', tasks.ui.watch);
 gulp.task('build-ui', 'Build UI for Semantic UI', tasks.ui.build);
+

@@ -2,7 +2,7 @@
   "name": "ThyNameIsMud.com",
   "version": "1.0.0",
   "description": "The site for Louis Weber",
-  "main": "backend/builder/guilpfile.js",
+  "main": "guilpfile.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -10,7 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "catbox-redis": "^1.0.4",
-    "gulp-connect-pm2": "0.0.2",
+    "handlebars": "^2.0.0",
     "hapi": "^8.2.0",
     "jade": "^1.9.2",
     "joi": "^5.1.0",

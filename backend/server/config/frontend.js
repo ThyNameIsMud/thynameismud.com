@@ -6,10 +6,9 @@ CONFIG = require(process.env.base_path + 'config')
 
 ;
 
-module.exports = function (CONFIG) {
-    var server = {
+module.exports = {
         hostname: 'localhost',
-        port: 6669,
+        port: 3210,
         debug: { log: ['error'] },
         urls: {
             failureRedirect: '/login',
@@ -17,10 +16,9 @@ module.exports = function (CONFIG) {
         },
         views: {
             engines: {
-                //jade: require('jade'),
+                html: require('handlebars'),
             },
-            path:  CONFIG.paths.templates,
-            compileMode: 'sync'
+            path:  CONFIG.paths.templates
         },
         cache: {
             engine: require('catbox-redis'),
@@ -33,4 +31,3 @@ module.exports = function (CONFIG) {
             path: 'cwd'
         }
     };
-};

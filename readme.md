@@ -1,4 +1,11 @@
-Site
+
+Required
+NodeJS, NPM, PM2 (installed global)
+
+`npm install`
+`base_path=~/Site/ gulp`
+
+Framework
 	| Backend
 		| Builder
 			| Config

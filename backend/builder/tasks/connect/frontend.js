@@ -7,18 +7,38 @@ CONFIG = require(process.env.base_path + 'config'),
 
 // Dependences
 gulp = require('gulp-help')(require('gulp')),
-pm2 = require('gulp-connect-pm2')
+exec = require('child_process').exec
 
 ;
+
+function listPM2Items () {
+	var items = exec('pm2 list', 
+		function (err,stdout,stderr) { 
+			if(err) {
+				console.error(err);
+			}
+		}
+	);
+
+	items.stdout.on('data', function(data) {
+		console.dir(data);
+	});
+}
 
 module.exports = function (callback) {
 	console.info("Connecting Frontend Server");
 
 	gulp.task('connect-frontend', function() {
-		pm2.server({
-			root: CONFIG.paths.servers + 'frontend-server',
-			port: 6669,
-			livereload: true
+
+		var frontend = exec('pm2 start ' + CONFIG.paths.servers + 'frontend-server.js --watch --name ' +CONFIG.server.domain +' frontend',
+				function (err, stdout, stderr) {
+					if(err) {
+						console.error(err);	
+					} 
+				}
+			);
+		frontend.on('close', function(data) {
+			listPM2Items();
 		});
 	});
 };

@@ -19,11 +19,11 @@ module.exports = function (callback) {
 	tasks.frontend = require(CONFIG.paths.builder + 'tasks/connect/frontend');
 	gulp.task('connect-frontend', 'Connect Frontend Server', tasks.frontend);
 
-	tasks.backend = require(CONFIG.paths.builder + 'tasks/connect/backend');
-	gulp.task('connect-backend', 'Connect Backend APIs', tasks.backend);
+	//tasks.backend = require(CONFIG.paths.builder + 'tasks/connect/backend');
+	//gulp.task('connect-backend', 'Connect Backend APIs', tasks.backend);
 
 	task.push('connect-frontend');
-	task.push('connect-backend');
+	//task.push('connect-backend');
 	
 	runSequence(task, callback);
 };
