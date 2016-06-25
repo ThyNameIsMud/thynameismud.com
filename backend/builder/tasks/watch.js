@@ -3,7 +3,7 @@
 
 var 
 
-CONFIG = require('../../../config'),
+CONFIG = require(process.env.base_path+'config'),
 
 // Dependences
 gulp = require('gulp-help')(require('gulp')),
@@ -15,8 +15,7 @@ tasks = [];
 module.exports = function (callback) {
 	
 	tasks.push('watch-ui');
-	tasks.push('watch-frontend');
+	//tasks.push('watch-frontend');
 	
 	runSequence(tasks, callback);
 };
- 

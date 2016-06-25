@@ -1,9 +1,8 @@
 /*jshint node:true*/
-// compile and make js awesome
 
 var 
 
-CONFIG = require('../../../../config'),
+CONFIG = require(process.env.base_path + 'config'),
 gulp = require('gulp'),
 
 //gulp
@@ -12,7 +11,7 @@ gulp = require('gulp'),
 	print          = require('gulp-print'),
 	uglify         = require('gulp-uglify'),
 	bower          = require('gulp-bower'),
-	gulpBowerFiles = require('main-bower-files');
+	bowerFiles = require('main-bower-files');
 
 module.exports = function (callback) {
 
@@ -21,12 +20,12 @@ module.exports = function (callback) {
 	var bowerFilesConf = {
 				'paths': {
 					'bowerDirectory' : CONFIG.paths.libaries,
-					'bowerJson' : CONFIG.paths.builder + '/config/bower.json',
-					'bowerrc' : CONFIG.paths.builder + '/config/.bowerrc'
+					'bowerJson' : CONFIG.paths.builder + 'config/bower.json',
+					'bowerrc' : CONFIG.paths.builder + 'config/.bowerrc'
 				}
 			},
 		bowerConf = {
-			'directory' : CONFIG.paths.builder + '/config/.bowerrc',
+			'cwd' : CONFIG.paths.builder + 'config/',
 			'cmd' : 'install'
 		},
 		uglifyConf = {
@@ -35,11 +34,11 @@ module.exports = function (callback) {
 
 	bower(bowerConf);
 
-	gulp.src(gulpBowerFiles(bowerConf))
+	gulp.src(bowerFiles(bowerFilesConf))
 		.pipe(plumber())
 		.pipe(flatten())
 		.pipe(uglify(uglifyConf))
-		.pipe(gulp.dest(CONFIG.paths.compile + '/js/libs.js'))
+		.pipe(gulp.dest(CONFIG.paths.static + 'js/libs.js'))
 		.on('end', function () {
 			callback();
 		});

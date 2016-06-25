@@ -1,5 +1,11 @@
 /*jshint node:true*/
 
+var 
+
+CONFIG = require(process.env.base_path + 'config')
+
+;
+
 module.exports = function (CONFIG) {
     var server = {
         hostname: '127.0.0.1',
@@ -13,7 +19,7 @@ module.exports = function (CONFIG) {
             engines: {
                 jade: require('jade'),
             },
-            path: __dirname + '/templates',
+            path:  CONFIG.paths.templates,
             compileMode: 'sync'
         },
         cache: {

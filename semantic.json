@@ -8,12 +8,12 @@
       "themes": "src/themes/"
     },
     "output": {
-      "packaged": "../libaries/semantic/",
-      "uncompressed": "../libaries/semantic/components/",
-      "compressed": "../libaries/semantic/components/",
-      "themes": "../libaries/semantic/themes/"
+      "packaged": "../static/semantic/",
+      "uncompressed": "../static/semantic/components/",
+      "compressed": "../static/semantic/components/",
+      "themes": "../static/semantic/themes/"
     },
-    "clean": "dist/"
+    "clean": "../static/semantic/"
   },
   "permission": false,
   "rtl": "No",

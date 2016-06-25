@@ -1,9 +1,8 @@
 /*jshint node:true*/
-// compile and make css awesome
 
 var gulp = require('gulp'),
 
-CONFIG = require('../../../../config'),
+CONFIG = require(process.env.base_path + 'config'),
 
 //gulp
 	flatten        = require('gulp-flatten'),
@@ -14,9 +13,9 @@ CONFIG = require('../../../../config'),
 
 module.exports = function (callback) {
 
-	console.info('Compiling Additional Javascripts');
+	console.info('Compiling Additional Styles');
 
-	var bowerConf = {
+	/*var bowerConf = {
 				'paths': {
 					'bowerDirectory' : CONFIG.paths.libaries,
 					'bowerJson' : CONFIG.paths.builder + '/config/bower.json',
@@ -34,5 +33,5 @@ module.exports = function (callback) {
 		.pipe(gulp.dest(CONFIG.paths.compile + '/js/libs.js'))
 		.on('end', function () {
 			callback();
-		});
+		});*/
 };
