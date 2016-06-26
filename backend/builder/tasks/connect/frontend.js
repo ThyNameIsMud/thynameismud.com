@@ -30,7 +30,7 @@ module.exports = function (callback) {
 
 	gulp.task('connect-frontend', function() {
 
-		var frontend = exec('pm2 start ' + CONFIG.paths.servers + 'frontend-server.js --watch --name ' +CONFIG.server.domain +' frontend',
+		var frontend = exec('pm2 start ' + CONFIG.paths.servers + 'frontend.js --watch --name ' +CONFIG.server.domain +' frontend',
 				function (err, stdout, stderr) {
 					if(err) {
 						console.error(err);	
