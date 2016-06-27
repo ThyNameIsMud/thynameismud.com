@@ -50,7 +50,6 @@ server.register([
                                 
 */
 server.route(require('./routes/lib'));
-server.route(require("./routes/compiled"));
 server.route(require('./routes/index'));
 server.route(require('./routes/links'));
 

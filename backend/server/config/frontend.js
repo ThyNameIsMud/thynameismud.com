@@ -7,8 +7,8 @@ CONFIG = require(process.env.base_path + 'config')
 ;
 
 module.exports = {
-        hostname: 'localhost',
-        port: 3210,
+        hostname: CONFIG.server.frontend.host,
+        port: CONFIG.server.frontend.port,
         debug: { log: ['error'] },
         urls: {
             failureRedirect: '/login',
@@ -18,7 +18,8 @@ module.exports = {
             engines: {
                 html: require('handlebars'),
             },
-            path:  CONFIG.paths.templates
+            path:  CONFIG.paths.templates,
+            partialsPath: CONFIG.paths.templates + 'partials'
         },
         cache: {
             engine: require('catbox-redis'),

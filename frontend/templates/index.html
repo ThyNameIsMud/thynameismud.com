@@ -1,203 +1,29 @@
 <!DOCTYPE html>
 <html>
 <head>
+	{{! Load the header template}}
+	{{> header}}
 	<title>{{title}}</title>
-	<meta charset="utf-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
-	
-	<link rel="stylesheet" type="text/css" src="static/semantic/semantic.min.css">
-	<link rel="stylesheet" type="text/css" href="static/semantic/components/reset.min.css">
-	<link rel="stylesheet" type="text/css" href="static/semantic/components/site.min.css">
-
-	<link rel="stylesheet" type="text/css" href="static/semantic/components/container.min.css">
-	<link rel="stylesheet" type="text/css" href="static/semantic/components/grid.min.css">
-	<link rel="stylesheet" type="text/css" href="static/semantic/components/header.min.css">
-	<link rel="stylesheet" type="text/css" href="static/semantic/components/image.min.css">
-	<link rel="stylesheet" type="text/css" href="static/semantic/components/menu.min.css">
-
-	<link rel="stylesheet" type="text/css" href="static/semantic/components/divider.min.css">
-	<link rel="stylesheet" type="text/css" href="static/semantic/components/dropdown.min.css">
-	<link rel="stylesheet" type="text/css" href="static/semantic/components/segment.min.css">
-	<link rel="stylesheet" type="text/css" href="static/semantic/components/button.min.css">
-	<link rel="stylesheet" type="text/css" href="static/semantic/components/list.min.css">
-	<link rel="stylesheet" type="text/css" href="static/semantic/components/icon.min.css">
-	<link rel="stylesheet" type="text/css" href="static/semantic/components/sidebar.min.css">
-	<link rel="stylesheet" type="text/css" href="static/semantic/components/transition.min.css">
-
-	<style type="text/css">
-		.hidden.menu {
-			display: none;
-		}
-
-		.masthead.segment {
-			min-height: 700px;
-			padding: 1em 0em;
-		}
-
-		.masthead .logo.item img {
-			margin-right: 1em;
-		}
-
-		.masthead .ui.menu .ui.button {
-			margin-left: 0.5em;
-		}
-
-		.masthead h1.ui.header {
-			margin-top: 3em;
-			margin-bottom: 0em;
-			font-size: 4em;
-			font-weight: normal;
-		}
-
-		.masthead h2 {
-			font-size: 1.7em;
-			font-weight: normal;
-		}
-
-		.ui.vertical.stripe {
-			padding: 8em 0em;
-		}
-
-		.ui.vertical.stripe h3 {
-			font-size: 2em;
-		}
-
-		.ui.vertical.stripe .button + h3,
-		.ui.vertical.stripe p + h3 {
-			margin-top: 3em;
-		}
-
-		.ui.vertical.stripe .floated.image {
-			clear: both;
-		}
-
-		.ui.vertical.stripe p {
-			font-size: 1.33em;
-		}
-
-		.ui.vertical.stripe .horizontal.divider {
-			margin: 3em 0em;
-		}
-
-		.quote.stripe.segment {
-			padding: 0em;
-		}
-
-		.quote.stripe.segment .grid .column {
-			padding-top: 5em;
-			padding-bottom: 5em;
-		}
-
-		.footer.segment {
-			padding: 5em 0em;
-		}
-
-		.secondary.pointing.menu .toc.item {
-			display: none;
-		}
-
-		@media only screen and (max-width: 700px) {
-			.ui.fixed.menu {
-				display: none !important;
-			}
-			
-			.secondary.pointing.menu .item,
-			.secondary.pointing.menu .menu {
-				display: none;
-			}
-			
-			.secondary.pointing.menu .toc.item {
-				display: block;
-			}
-			
-			.masthead.segment {
-				min-height: 350px;
-			}
-
-			.masthead h1.ui.header {
-				font-size: 2em;
-				margin-top: 1.5em;
-			}
-
-			.masthead h2 {
-				margin-top: 0.5em;
-				font-size: 1.5em;
-			}
-		}
-	</style>
-
-
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-	<script type="text/javascript" src="static/semantic/semantic.min.js"></script>
-	<script src="static/semantic/components/visibility.min.js"></script>
-	<script src="static/semantic/components/sidebar.min.js"></script>
-	<script src="static/semantic/components/transition.min.js"></script>
-	<script type="text/javascript">
-		$(document).ready(function() {
-	
-		// fix menu when passed
-		$('.masthead')
-			.visibility({
-				once: false,
-				onBottomPassed: function() {
-					$('.fixed.menu').transition('fade in');
-				},
-				onBottomPassedReverse: function() {
-					$('.fixed.menu').transition('fade out');
-				}
-			});
-
-		// create sidebar and attach to menu open
-		$('.ui.sidebar')
-			.sidebar('attach events', '.toc.item');
-	});
-	</script>
 </head>
 <body>
-	<!-- Following Menu -->
-	<div class="ui large top fixed hidden menu">
-		<div class="ui container">
-			<a href="/" class="active item">ThyNameIsMud.com</a>
-			<a href="/resume" class="item">Resume</a>
-			<a href="https://github.com/ThyNameIsMud/thynameismud.com" class="item">Code</a>
-			<div class="right menu">
-				<div class="item">
-					<a class="ui button">Contact</a>	
-				</div>
-			</div>
-		</div>		
-	</div>
-	<!-- Sidebar Menu -->
-	<div class="ui veritcal inverted sidebar menu">
-		<a class="active item">ThyNameIsMud.com</a>
-		<a class="item">Resume</a>
-		<a class="item">Code</a>
-		<div class="right item">
-			<a class="ui button inverted">Contact</a>
-		</div>
-	</div>
+	
+	{{! Load Menus}}
+
+	{{> menu.main}}
+	{{> menu.sidebar}}
+	
 	<!-- Page Contents -->
 	<div class="pusher">
 		 <div class="ui inverted vertircal masthead center aligned segment">
-		 	<div class="ui container">
-		 		<div class="ui large secondary inverted pointing menu">
-		 			<a class="toc item">
-		 				<i class="sidebar icon"></i>
-		 			</a>
-		 			<a class="active item">ThyNameIsMud.com</a>
-					<a class="item">Resume</a>
-					<a class="item">Code</a>
-					<a class="ui button item">Contact</a>
-		 		</div>
-		 	</div>
+		 	{{! Load Pusher Menu}}
+		 	{{> menu.pusher}}
 
 		 	<div class="ui text container">
 				<h1 class="ui inverted header">
-					Welcome to Poop Master Villa
+					Louis Weber
 				</h1>
-				<h2>Poop where ever you want to poop</h2>
-				<div class="ui huge primary button">Poop!!! <i class="right arrow icon"></i></div>
+				<h2>Web Design, Software Engineer, Landscaper</h2>
+				<div class="ui huge primary button">Contact</div>
 		 	</div>
 		 </div>
 
@@ -206,40 +32,18 @@
 		 		<div class="row">
 		 			<div class="twelve wide column">
 		 				<h3 class="ui header">
-		 					Poop Poop poop Poop Poooooooop
+		 					Seriously, hire him.
 		 				</h3>
+		 				<p>
+		 					Bacon ipsum dolor amet biltong capicola pig, meatball tri-tip bresaola porchetta beef chicken. Tongue salami jerky boudin. Pig fatback rump, chicken shank bacon swine picanha pastrami meatball ribeye meatloaf jerky. Pork loin jerky beef pork beef ribs bresaola hamburger biltong, bacon pancetta. Turducken jerky boudin tenderloin picanha. T-bone cow picanha, strip steak bresaola fatback pig jerky pastrami shoulder turkey doner swine.
+		 				</p>
 		 			</div>
 		 		</div>
 		 	</div>
 		 </div>
 
-		 <div class="ui inverted vertical footer segment">
-		 	<div class="ui container">
-		 		<div class="ui stackable inverted divided equal height grid">
-		 			<div class="three wide column">
-		 				<h4 class="ui inverted header">About</h4>
-		 				<div class="ui inverted link list">
-		 					<a href="#" class="item">Contact</a>
-		 					<a href="#" class="item">Please Contact</a>
-		 					<a href="#" class="item">Don't Contact</a>
-		 				</div>
-		 			</div>
-
-		 			<div class="three wide column">
-		 				<h4 class="ui inverted column">Services</h4>
-		 				<div class="ui inverted link list">
-		 					<a href="#" class="item">Not That Kind</a>
-		 					<a href="#" class="item">Anal</a>
-		 				</div>
-		 			</div>
-
-		 			<div class="seven wide column">
-		 				<h4 class="ui inverted header">ThyNameIsMud.com</h4>
-		 				<p>Thinking about the shit so you don't have to</p>
-		 			</div>
-		 		</div>
-		 	</div>
-		 </div>		
+		 {{! Load Footer}}
+		 {{> footer}}		
 	</div>
 </body>
 </html>

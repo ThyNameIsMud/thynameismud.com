@@ -12,7 +12,7 @@ gulp = require('gulp-help')(require('gulp'))
 module.exports = function (callback) {
 	console.info("Connecting Frontend Server");
 
-	gulp.task('reload-css', function() {
+	/*gulp.task('reload-css', function() {
 		//gulp.src(CONFIG.paths.static + 'semantic/*.css')
 		//.pipe(pm2.reload());
 	});
@@ -25,6 +25,6 @@ module.exports = function (callback) {
 	gulp.task('watch-output', function() {
 		gulp.watch([CONFIG.paths.static + 'semantic/*.css'], ['reload-css']);
 		gulp.watch([CONFIG.paths.static + 'semantic/*.js'], ['reload-js']);
-	});
+	});*/
 
 };
