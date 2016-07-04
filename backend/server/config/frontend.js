@@ -19,6 +19,8 @@ module.exports = {
                 html: require('handlebars'),
             },
             path:  CONFIG.paths.templates,
+            layoutPath: CONFIG.paths.templates + 'layout',
+            layout: 'default',
             partialsPath: CONFIG.paths.templates + 'partials'
         },
         cache: {

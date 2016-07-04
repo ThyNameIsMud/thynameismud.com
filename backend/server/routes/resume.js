@@ -1,10 +1,11 @@
 module.exports = {
 	method: 'GET',
-	path: '/',
+	path: '/resume',
 	handler: function (request, reply) {
 		/* do things with request; */
-		reply.view('index', {
-	        title: 'ThyNameIsMud.com'
+		reply.view('resume', {
+	        title: 'Resume | ThyNameIsMud.com',
+	        page: 'resume'
 	    });
 	}
 };

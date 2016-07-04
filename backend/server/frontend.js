@@ -49,9 +49,11 @@ server.register([
  |_| \_\___/ \__,_|\__\___||___/
                                 
 */
+
 server.route(require('./routes/lib'));
 server.route(require('./routes/index'));
 server.route(require('./routes/links'));
+server.route(require('./routes/resume'));
 
 /*
   _____                 _       
