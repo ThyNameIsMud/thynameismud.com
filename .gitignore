@@ -32,6 +32,7 @@ nbproject
 .CVS
 .build
 frontend/static/*
+project
 
 # Unit test / coverage reports
 .coverage
