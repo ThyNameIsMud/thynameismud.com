@@ -11,7 +11,7 @@ tasks = {};
 
 // main tasks
 gulp.task('default', false, [
-	'connect', 'watch'
+	'watch'
 ]);
 
 tasks.connect = require(CONFIG.paths.builder + 'tasks/connect');
