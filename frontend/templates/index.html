@@ -1,7 +1,4 @@
 	{{!< layout/default}}
-	<style type="text/css">
-
-	</style>
 	<div class="pusher">
 		<div class="ui inverted vertircal masthead center aligned segment">
 		 	{{! Load Pusher Menu}}
@@ -12,7 +9,7 @@
 					Louis Weber IV
 				</h1>
 				<h2>Web Developer, Software Engineer, Landscaper</h2>
-				<div class="ui huge primary button">Contact</div>
+				<div><a class="ui big inverted primary button" href="mailto:mud@thynameismud.com">Contact</a></div>
 		 	</div>
 		 </div>
 
@@ -33,24 +30,4 @@
 
 		 {{! Load Footer}}
 		 {{> footer}}
-		 <script type="text/javascript">
-			$(document).ready(function() {
-
-			// fix menu when passed
-			$('.masthead')
-				.visibility({
-					once: false,
-					onBottomPassed: function() {
-						$('.fixed.menu').transition('fade in');
-					},
-					onBottomPassedReverse: function() {
-						$('.fixed.menu').transition('fade out');
-					}
-				});
-
-			// create sidebar and attach to menu open
-			$('.ui.sidebar')
-				.sidebar('attach events', '.toc.item');
-		});
-		</script>
 	</div>

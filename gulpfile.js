@@ -26,8 +26,8 @@ gulp.task('watch', 'Start the server', tasks.watch);
 //SUBTASKS
 
 //servers
-tasks.frontend = require(CONFIG.paths.builder + 'tasks/connect/frontend');
-gulp.task('connect-frontend', 'Connect Frontend Server', tasks.frontend);
+//tasks.frontend = require(CONFIG.paths.builder + 'tasks/connect/frontend');
+//gulp.task('connect-frontend', 'Connect Frontend Server', tasks.frontend);
 
 //tasks.backend = require(CONFIG.paths.builder + 'tasks/connect/backend');
 //gulp.task('connect-backend', 'Connect Backend APIs', tasks.backend);
