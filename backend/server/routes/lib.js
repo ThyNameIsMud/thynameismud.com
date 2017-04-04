@@ -1,13 +1,14 @@
-/*jshint node:true */
-var 
-CONFIG = require(process.env.base_path + 'config')
+'use strict';
 
-;
+const path = require('path');
+const CONF = require(path.resolve('config.json'));
 
 module.exports = {
 	method: 'GET',
-	path: '/static/{param*}',
-	handler: function (request, reply) {
-		reply.file(CONFIG.paths.static + request.params.param);
+	path  : '/static/{param*}',
+	config: {
+		handler: (req, reply) => {
+			reply.file(path.resolve(CONF.path.static, req.params.param));
+		}
 	}
 };

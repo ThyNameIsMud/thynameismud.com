@@ -1,36 +1,33 @@
-/*jshint node:true*/
+'use strict';
 
-var 
+const path = require('path');
+const CONF = require(path.resolve('config.json'));
 
-CONFIG = require(process.env.base_path + 'config')
-
-;
-
-module.exports = function (CONFIG) {
-    var server = {
-        hostname: 'localhost',
-        port: 6660,
-        debug: { log: ['error'] },
-        urls: {
-            failureRedirect: '/login',
-            successRedirect: '/'
+module.exports = {
+    hostname: CONF.server.backend.host,
+    port: CONF.server.backend.port,
+    debug: { log: ['error'] },
+    urls: {
+        failureRedirect: '/login',
+        successRedirect: '/'
+    },
+    views: {
+        engines: {
+            html: require('handlebars'),
         },
-        views: {
-            engines: {
-                //jade: require('jade'),
-            },
-            path:  CONFIG.paths.templates,
-            compileMode: 'sync'
-        },
-        cache: {
-            engine: require('catbox-redis'),
-            options: {
-                host: "127.0.0.1",
-                partition: "tnim"
-            }
-        },
-        files: {
-            path: 'cwd'
+        path:  path.resolve(CONF.path.templates),
+        layoutPath: path.resolve(CONF.path.templates, "layout"),
+        layout: 'default',
+        partialsPath: path.resolve(CONF.path.templates, "partials")
+    },
+    cache: {
+        engine: require('catbox-redis'),
+        options: {
+            host: "127.0.0.1",
+            partition: "tnim"
         }
-    };
+    },
+    files: {
+        path: 'cwd'
+    }
 };
