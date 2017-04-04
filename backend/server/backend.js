@@ -45,6 +45,12 @@ server.register([
         register: require('tv') // https://github.com/hapijs/tv - TV is an interactive debug console plugin for hapi.js
     },
     {
+    	register: require('poop'),
+    	options: {
+    		logPath: path.resolve("poop.log")
+    	}
+    },
+    {
     	register: require('good'), // https://github.com/hapijs/good - hapi.js process monitoring
     	options: {
     		ops: {
