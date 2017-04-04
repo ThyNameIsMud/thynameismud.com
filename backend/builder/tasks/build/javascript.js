@@ -1,34 +1,34 @@
-/*jshint node:true*/
+'use strict';
 
-var 
-
-CONFIG = require(process.env.base_path + 'config'),
-gulp = require('gulp'),
+const path   = require('path');
+const CONFIG = require(path.resolve('config.js'));
+const gulp   = require('gulp');
 
 //gulp
-	flatten        = require('gulp-flatten'),
-	plumber        = require('gulp-plumber'),
-	print          = require('gulp-print'),
-	uglify         = require('gulp-uglify'),
-	bower          = require('gulp-bower'),
-	bowerFiles = require('main-bower-files');
+const flatten    = require('gulp-flatten');
+const plumber    = require('gulp-plumber');
+const uglify     = require('gulp-uglify');
+const bower      = require('gulp-bower');
+const bowerFiles = require('main-bower-files');
 
 module.exports = function (callback) {
 
 	console.info('Compiling Additional Javascripts');
 
-	var bowerFilesConf = {
+	const bowerFilesConf = {
 				'paths': {
-					'bowerDirectory' : CONFIG.paths.libaries,
-					'bowerJson' : CONFIG.paths.builder + 'config/bower.json',
-					'bowerrc' : CONFIG.paths.builder + 'config/.bowerrc'
+					'bowerDirectory': path.resolve(CONFIG.path.libaries),
+					'bowerJson'     : path.resolve(CONFIG.path.builder, "config", "bower.json"),
+					'bowerrc'       : path.resolve(CONFIG.path.builder, "config", ".bowerrc")
 				}
-			},
-		bowerConf = {
-			'cwd' : CONFIG.paths.builder + 'config/',
+			};
+
+	const bowerConf = {
+			'cwd' : path.resolve(CONFIG.path.builder, "config"),
 			'cmd' : 'install'
-		},
-		uglifyConf = {
+		};
+
+	const uglifyConf = {
 				'preserveComments' : 'license'
 			};
 
@@ -38,8 +38,8 @@ module.exports = function (callback) {
 		.pipe(plumber())
 		.pipe(flatten())
 		.pipe(uglify(uglifyConf))
-		.pipe(gulp.dest(CONFIG.paths.static + 'js/libs.js'))
-		.on('end', function () {
+		.pipe(gulp.dest(path.resolve(CONFIG.paths.static, "js", "libs.js")))
+		.on('end', () => {
 			callback();
 		});
 };

@@ -1,13 +1,10 @@
-/*jshint node:true*/
 'use strict';
 
-var 
-
-CONFIG = require(process.env.base_path + 'config'),
+const path   = require('path');
+const CONFIG = require(path.resolve('config.js'));
 
 // Dependences
-gulp = require('gulp-help')(require('gulp'))
-;
+const gulp = require('gulp-help')(require('gulp'));
 
 module.exports = function (callback) {
 	console.info("Connecting Frontend Server");

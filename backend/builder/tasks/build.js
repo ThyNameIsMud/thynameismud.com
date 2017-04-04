@@ -1,29 +1,27 @@
-/*jshint node:true*/
 'use strict';
 
-var 
-
-CONFIG = require(process.env.base_path + 'config'),
+const path   = require('path');
+const CONFIG = require(path.resolve('config.js'));
 
 // Dependences
-gulp = require('gulp-help')(require('gulp')),
-runSequence = require('run-sequence'),
+const gulp        = require('gulp-help')(require('gulp'));
+const runSequence = require('run-sequence');
 
 // tasks
-tasks = {},
-task = [];
+const tasks = {};
+const task  = [];
 
 module.exports = function (callback) {
 	console.info('Building '+ CONFIG.server.domain);
 
-	tasks.uibuilder = require(CONFIG.paths.ui + 'tasks/build');
+	tasks.uibuilder = require(path.resolve(CONFIG.path.ui, "tasks", "build.js"));
 	gulp.task('build-ui', 'Build UI for Semantic UI', tasks.uibuilder);
 
-	tasks.javascripts = require(CONFIG.paths.builder + 'tasks/build/javascript');
+	tasks.javascripts = require(path.resolve(CONFIG.path.builder, "tasks", "build", "javascript"));
 	gulp.task('build-javascript', 'Compile any additional javascripts', tasks.javascripts);
 
 	task.push('build-ui');
 	task.push('build-javascript');
-	
+
 	runSequence(task, callback);
 };

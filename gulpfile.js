@@ -1,49 +1,40 @@
-/*jshint node:true*/
 'use strict';
 
+const path = require('path');
+
 // config
-var CONFIG = require(process.env.base_path + 'config'),
+const CONFIG = require(path.resolve('config.json'));
 
 // dependences
-gulp  = require('gulp-help')(require('gulp')),
-paths = {},
-tasks = {};
+const gulp  = require('gulp-help')(require('gulp'));
+const paths = {};
+const tasks = {};
 
 // main tasks
 gulp.task('default', false, [
 	'watch'
 ]);
 
-tasks.connect = require(CONFIG.paths.builder + 'tasks/connect');
-gulp.task('connect', 'Connect Frontend and Backend APIs', tasks.connect);
-
-tasks.build = require(CONFIG.paths.builder + 'tasks/build');
+tasks.build = require(path.resolve(CONFIG.path.builder, "tasks", "build.js"));
 gulp.task('build', 'Build the files', tasks.build);
 
-tasks.watch = require(CONFIG.paths.builder + 'tasks/watch');
+tasks.watch = require(path.resolve(CONFIG.path.builder, "tasks", "watch.js"));
 gulp.task('watch', 'Start the server', tasks.watch);
 
 //SUBTASKS
 
-//servers
-//tasks.frontend = require(CONFIG.paths.builder + 'tasks/connect/frontend');
-//gulp.task('connect-frontend', 'Connect Frontend Server', tasks.frontend);
-
-//tasks.backend = require(CONFIG.paths.builder + 'tasks/connect/backend');
-//gulp.task('connect-backend', 'Connect Backend APIs', tasks.backend);
-
 //watchers
-tasks.output = require(CONFIG.paths.builder + 'tasks/watch/output');
+tasks.output = require(path.resolve(CONFIG.path.builder, "tasks", "watch", "output.js"));
 gulp.task('watch-output', 'Watch outputed files to reload server', tasks.output);
 
 // builds
-tasks.javascripts = require(CONFIG.paths.builder + 'tasks/build/javascript');
+tasks.javascripts = require(path.resolve(CONFIG.path.builder, "tasks", "build", "javascript.js"));
 gulp.task('build-javascript', 'Compile any additional javascripts', tasks.javascripts);
 
 // ui
 tasks.ui = {
-	'watch' : require(CONFIG.paths.ui + 'tasks/watch'),
-	'build' : require(CONFIG.paths.ui + 'tasks/build')
+	'watch' : require(path.resolve(CONFIG.path.builder, "tasks", "watch.js")),
+	'build' : require(path.resolve(CONFIG.path.builder,"tasks", "build.js"))
 };
 
 gulp.task('watch-ui', 'Watch UI for Semantic UI', tasks.ui.watch);

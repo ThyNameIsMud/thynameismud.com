@@ -43,6 +43,7 @@
     "plusplus": false,
     "sub": false,
     "trailing": true,
+    "esversion": 6,
     "globals": {
         "App" : true,
         "jQuery": true,
