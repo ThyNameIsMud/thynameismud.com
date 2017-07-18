@@ -8,6 +8,8 @@
 *.vi
 *~
 *.psd
+*.heapsnapshot
+*.log
 *.rdb
 
 # OS or Editor folders
